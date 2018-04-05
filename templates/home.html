@@ -6,8 +6,12 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/1.3.5/socket.io.min.js"></script>
     <script type="text/javascript" charset="utf-8">
         $(document).ready(function() {
-            
-            
+		namespace ='/' 
+		var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port + namespace);
+		//event handler fo rthe start event
+		socket.on('start', function(msg) {
+			$('#start').text(msg); // desplay the server data	
+		});
         });
     </script>
 </head>
