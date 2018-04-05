@@ -10,7 +10,7 @@ socketio = SocketIO(app, async_mode=None)
 thread = None
 thread_lock = Lock() #we'll use this lock to prevent multiple clients from modifying thread at the same time
 
-@socketio.com('connect')
+@socketio.on('connect')
 def test_connect():
     global thread
     with thread_lock: #lock thread in case multiple clients a 
