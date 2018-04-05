@@ -12,6 +12,10 @@
 		socket.on('start', function(msg) {
 			$('#start').text(msg); // desplay the server data	
 		});
+		//event hnadler for my_response events
+		socket.on('my_response', function(msg) {
+			$('#log').append('<br>' + msg);
+		});
         });
     </script>
 </head>
