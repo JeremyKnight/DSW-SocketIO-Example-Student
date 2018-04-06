@@ -24,7 +24,7 @@ def background_thread():
     while True:
         socketio.sleep(5)
         count +=1
-        emit('my_response', count) #send count to all clients
+        socketio.emit('my_response', count) #send count to all clients
 @app.route('/')
 def index():
     return render_template('home.html', async_mode=socketio.async_mode)
